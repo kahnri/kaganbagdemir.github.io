@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,30 +7,33 @@
 <meta name="description" content="Maschinenbau (ITPL) · Data & Logistics · Werkstudent / Praktikum / Junior">
 <script src="https://cdn.tailwindcss.com"></script>
 <meta name="color-scheme" content="light dark">
+<!-- Plausible -->
+<script defer data-domain="kaganbagdemir.de" src="https://plausible.io/js/script.js"></script>
 </head>
 <body class="bg-zinc-950 text-zinc-100">
   <main class="max-w-5xl mx-auto px-6 py-10">
     <header class="flex items-center justify-between">
       <h1 class="text-xl font-bold tracking-wide">KAGAN BAGDEMIR</h1>
-      <div class="space-x-2">
-        <button onclick="setLang('de')" class="px-3 py-1 rounded-full border border-zinc-700">DE</button>
-        <button onclick="setLang('en')" class="px-3 py-1 rounded-full border border-zinc-700">EN</button>
+      <div class="flex items-center gap-3">
+        <a href="/blog/" class="hidden md:inline px-3 py-1 rounded-full border border-zinc-700 hover:border-zinc-500 transition" data-i18n="nav.blog"></a>
+        <div class="space-x-2">
+          <button onclick="setLang('tr')" class="px-3 py-1 rounded-full border border-zinc-700">TR</button>
+          <button onclick="setLang('de')" class="px-3 py-1 rounded-full border border-zinc-700">DE</button>
+          <button onclick="setLang('en')" class="px-3 py-1 rounded-full border border-zinc-700">EN</button>
+        </div>
       </div>
     </header>
 
     <section class="mt-6 rounded-2xl p-6 border border-zinc-800 bg-zinc-900/60">
-      <h2 class="text-2xl font-semibold"
-          data-de="Maschinenbau (ITPL) · Data & Logistics"
-          data-en="Mechanical Eng. (ITPL) · Data & Logistics"></h2>
-      <p class="text-zinc-400 mt-1"
-         data-de="Werkstudent / Praktikum / Junior · Data/Analytics, Logistik-IT, Manufacturing"
-         data-en="Werkstudent / Internship / Junior · Data/Analytics, Logistics IT, Manufacturing"></p>
+      <h2 class="text-2xl font-semibold" data-i18n="hero.title"></h2>
+      <p class="text-zinc-400 mt-1" data-i18n="hero.subtitle"></p>
 
       <div class="flex flex-wrap gap-3 mt-4">
-        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="mailto:bagdemirkagande@gmail.com">bagdemirkagande@gmail.com</a>
-        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="/dev/">CV / Resume (PDF)</a>
-        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="/dev/" target="_blank">LinkedIn</a>
-        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="/dev/" target="_blank">GitHub</a>
+        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="mailto:hi@kaganbagdemir.de" data-i18n="btn.email"></a>
+        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="/dev/" data-i18n="btn.cv"></a>
+        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="/dev/" target="_blank" data-i18n="btn.linkedin"></a>
+        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="/dev/" target="_blank" data-i18n="btn.github"></a>
+        <a class="px-4 py-2 rounded-xl border border-emerald-600/50 bg-emerald-900/20" href="/blog/" data-i18n="btn.blog"></a>
       </div>
 
       <div class="flex flex-wrap gap-2 mt-4 text-sm text-zinc-300">
@@ -41,37 +44,30 @@
       </div>
     </section>
 
+    <!-- Kartlar (hepsi şimdilik /dev'e gider) -->
     <section class="grid md:grid-cols-2 gap-4 mt-6">
-      <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60">
+      <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 transition hover:-translate-y-0.5 hover:border-zinc-600">
         <h3 class="text-lg font-semibold">FEM Mini-Solver (Python/NumPy)</h3>
-        <p class="text-zinc-400 mt-1"
-           data-de="2D elemanlarla demolar; DOF, küresel rijitlik, yer değiştirme & gerilme."
-           data-en="2D elements demos; DOFs, global stiffness, displacement & stress."></p>
-        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="/dev/">Repo / Demo</a>
+        <p class="text-zinc-400 mt-1" data-i18n="cards.fem"></p>
+        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700 hover:border-zinc-500 transition" href="/dev/" data-i18n="cards.repo"></a>
       </article>
 
-      <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60">
+      <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 transition hover:-translate-y-0.5 hover:border-zinc-600">
         <h3 class="text-lg font-semibold">Warehouse KPI Dashboard</h3>
-        <p class="text-zinc-400 mt-1"
-           data-de="Lead time, picking accuracy, OEE; Python→pandas→viz; aksiyon alınabilir."
-           data-en="Lead time, picking accuracy, OEE; Python→pandas→viz; actionable."></p>
-        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="/dev/">Repo / Demo</a>
+        <p class="text-zinc-400 mt-1" data-i18n="cards.kpi"></p>
+        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700 hover:border-zinc-500 transition" href="/dev/" data-i18n="cards.repo"></a>
       </article>
 
-      <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60">
+      <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 transition hover:-translate-y-0.5 hover:border-zinc-600">
         <h3 class="text-lg font-semibold">CAD / Technische Zeichnung</h3>
-        <p class="text-zinc-400 mt-1"
-           data-de="Otomotiv parçaları; ölçülendirme, toleranslar, normlar; portföy."
-           data-en="Automotive parts; dimensioning, tolerances, norms; portfolio."></p>
-        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="/dev/">Portföy</a>
+        <p class="text-zinc-400 mt-1" data-i18n="cards.cad"></p>
+        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700 hover:border-zinc-500 transition" href="/dev/" data-i18n="cards.portfolio"></a>
       </article>
 
-      <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60">
-        <h3 class="text-lg font-semibold">Blog / Notlar</h3>
-        <p class="text-zinc-400 mt-1"
-           data-de="IT in Produktion & Logistik’ten kısa yazılar."
-           data-en="Short posts from IT in Production & Logistics."></p>
-        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="/blog/">Blog</a>
+      <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 transition hover:-translate-y-0.5 hover:border-zinc-600">
+        <h3 class="text-lg font-semibold" data-i18n="cards.blogTitle"></h3>
+        <p class="text-zinc-400 mt-1" data-i18n="cards.blogTxt"></p>
+        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700 hover:border-zinc-500 transition" href="/blog/" data-i18n="btn.blog"></a>
       </article>
     </section>
 
@@ -82,21 +78,49 @@
       </nav>
       <div id="impressum" class="mt-3">
         <h4 class="font-semibold text-zinc-200">Impressum</h4>
-        <p>Kagan Bağdemir · Dortmund · E-Mail: hi@kaganbagdemir.de (metni sonra güncelle)</p>
+        <p>Kagan Bağdemir · Dortmund · E-Mail: hi@kaganbagdemir.de</p>
       </div>
       <div id="datenschutz" class="mt-3">
         <h4 class="font-semibold text-zinc-200">Datenschutzerklärung</h4>
-        <p>Bu sitede çerez kullanılmıyor. Analytics ekleyince metni güncelle ve gerekiyorsa çerez banner’ı ekle.</p>
+        <p>Bu sitede çerez kullanılmıyor. Analytics ekleyince metni güncelle.</p>
       </div>
       <p class="mt-3">© <span id="y"></span> Kagan Bağdemir</p>
     </footer>
   </main>
 
 <script>
-const els=[...document.querySelectorAll('[data-de]')];
-function setLang(lang){els.forEach(el=>el.textContent=el.getAttribute(lang==='en'?'data-en':'data-de'));
-document.documentElement.lang=(lang==='en'?'en':'de'); localStorage.setItem('lang',lang);}
-setLang(localStorage.getItem('lang')||'de');
+const STRINGS={
+ tr:{'nav.blog':'Blog','hero.title':'Makine Mühendisliği (ITPL) · Veri & Lojistik',
+     'hero.subtitle':'Werkstudent / Staj / Junior · Veri/Analitik, Lojistik-IT, Üretim',
+     'btn.email':'E-posta','btn.cv':'CV / Özgeçmiş (PDF)','btn.linkedin':'LinkedIn','btn.github':'GitHub','btn.blog':'Blog',
+     'cards.fem':'2D elemanlarla demolar; DOF, küresel rijitlik, yer değiştirme & gerilme.',
+     'cards.kpi':'Lead time, picking accuracy, OEE; Python→pandas→viz; aksiyon alınabilir metrikler.',
+     'cards.cad':'Otomotiv parçaları; ölçülendirme, toleranslar, normlar; portföy.',
+     'cards.portfolio':'Portföy','cards.repo':'Repo / Demo','cards.blogTitle':'Blog / Notlar',
+     'cards.blogTxt':'IT in Produktion & Logistik üzerine kısa yazılar.'},
+ de:{'nav.blog':'Blog','hero.title':'Maschinenbau (ITPL) · Data & Logistics',
+     'hero.subtitle':'Werkstudent / Praktikum / Junior · Data/Analytics, Logistik-IT, Manufacturing',
+     'btn.email':'E-Mail','btn.cv':'CV / Lebenslauf (PDF)','btn.linkedin':'LinkedIn','btn.github':'GitHub','btn.blog':'Blog',
+     'cards.fem':'Demos mit 2D-Elementen; DOF, globale Steifigkeit, Verschiebung & Spannung.',
+     'cards.kpi':'Lead Time, Picking Accuracy, OEE; Python→pandas→Viz; umsetzbare Metriken.',
+     'cards.cad':'Automotive-Teile; Bemaßung, Toleranzen, Normen; Portfolio.',
+     'cards.portfolio':'Portfolio','cards.repo':'Repo / Demo','cards.blogTitle':'Blog / Notizen',
+     'cards.blogTxt':'Kurztexte aus IT in Produktion & Logistik.'},
+ en:{'nav.blog':'Blog','hero.title':'Mechanical Eng. (ITPL) · Data & Logistics',
+     'hero.subtitle':'Werkstudent / Internship / Junior · Data/Analytics, Logistics IT, Manufacturing',
+     'btn.email':'E-mail','btn.cv':'CV / Resume (PDF)','btn.linkedin':'LinkedIn','btn.github':'GitHub','btn.blog':'Blog',
+     'cards.fem':'Demos with 2D elements; DOFs, global stiffness, displacement & stress.',
+     'cards.kpi':'Lead time, picking accuracy, OEE; Python→pandas→viz; actionable metrics.',
+     'cards.cad':'Automotive parts; dimensioning, tolerances, norms; portfolio.',
+     'cards.portfolio':'Portfolio','cards.repo':'Repo / Demo','cards.blogTitle':'Blog / Notes',
+     'cards.blogTxt':'Short posts from IT in Production & Logistics.'}
+};
+function apply(lang){
+  document.documentElement.lang=lang; localStorage.setItem('lang',lang);
+  document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=STRINGS[lang][e.dataset.i18n]||e.textContent);
+}
+function setLang(l){apply(l);}
+apply(localStorage.getItem('lang')||'tr');
 document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 </body>
