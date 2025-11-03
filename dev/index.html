@@ -3,17 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Geliştirme Aşamasında</title>
+  <title>WIP — Kagan Bağdemir</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="color-scheme" content="light dark">
+  <!-- Plausible -->
+  <script defer data-domain="kaganbagdemir.de" src="https://plausible.io/js/script.js"></script>
 </head>
 <body class="bg-zinc-950 text-zinc-100">
   <main class="min-h-screen flex items-center justify-center p-6">
-    <div class="max-w-xl text-center">
-      <h1 class="text-3xl font-semibold">Bu bölüm geliştirme aşamasında</h1>
-      <p class="text-zinc-400 mt-2">Yakında burada proje detayları ve demolar olacak.</p>
-      <a href="/" class="inline-block mt-5 px-4 py-2 rounded-xl border border-zinc-700">← Anasayfa</a>
+    <div id="box" class="max-w-xl text-center opacity-0 transition-opacity duration-700">
+      <div class="flex items-center justify-between mb-6">
+        <a href="/" class="text-sm text-zinc-400 hover:text-zinc-200 transition">&larr; <span data-i18n="back.home"></span></a>
+        <div class="space-x-2">
+          <button onclick="setLang('tr')" class="px-3 py-1 rounded-full border border-zinc-700">TR</button>
+          <button onclick="setLang('de')" class="px-3 py-1 rounded-full border border-zinc-700">DE</button>
+          <button onclick="setLang('en')" class="px-3 py-1 rounded-full border border-zinc-700">EN</button>
+        </div>
+      </div>
+      <h1 class="text-3xl font-semibold" data-i18n="wip.title"></h1>
+      <p class="text-zinc-400 mt-2" data-i18n="wip.subtitle"></p>
+      <a href="/" class="inline-block mt-5 px-4 py-2 rounded-xl border border-zinc-700" data-i18n="back.home"></a>
     </div>
   </main>
+
+<script>
+const STRINGS={tr:{'back.home':'Anasayfa','wip.title':'Bu bölüm geliştirme aşamasında',
+'wip.subtitle':'Yakında burada proje detayları ve demolar olacak.'},
+de:{'back.home':'Startseite','wip.title':'Dieser Bereich befindet sich im Aufbau',
+'wip.subtitle':'Bald findest du hier Projektdetails und Demos.'},
+en:{'back.home':'Home','wip.title':'This section is under construction',
+'wip.subtitle':'Project details and demos will appear here soon.'}};
+const els=[...document.querySelectorAll('[data-i18n]')];
+function apply(lang){els.forEach(e=>e.textContent=STRINGS[lang][e.dataset.i18n]||e.textContent);
+document.documentElement.lang=lang; localStorage.setItem('lang',lang);}
+function setLang(l){apply(l);}
+apply(localStorage.getItem('lang')||'tr');
+addEventListener('DOMContentLoaded',()=>document.getElementById('box').classList.remove('opacity-0'));
+</script>
 </body>
 </html>
