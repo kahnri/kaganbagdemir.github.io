@@ -1,1 +1,1 @@
-# kaganbagdemir.github.io
+# kaganabgdemir.de
