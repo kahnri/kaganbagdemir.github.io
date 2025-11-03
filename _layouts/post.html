@@ -1,17 +1,23 @@
 <!doctype html>
-<html lang="de">
+<html lang="tr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{ page.title }} — Kagan Bağdemir</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="color-scheme" content="light dark">
+  <!-- Plausible -->
+  <script defer data-domain="kaganbagdemir.de" src="https://plausible.io/js/script.js"></script>
 </head>
 <body class="bg-zinc-950 text-zinc-100">
   <main class="max-w-3xl mx-auto px-6 py-10">
     <header class="flex items-center justify-between">
-      <a href="/" class="text-xl font-bold tracking-wide">KAGAN BAGDEMIR</a>
-      <a href="/blog/" class="px-3 py-1 rounded-full border border-zinc-700">← Blog</a>
+      <a href="/blog/" class="text-sm text-zinc-400 hover:text-zinc-200 transition">&larr; <span data-i18n="post.back"></span></a>
+      <div class="space-x-2">
+        <button onclick="setLang('tr')" class="px-3 py-1 rounded-full border border-zinc-700">TR</button>
+        <button onclick="setLang('de')" class="px-3 py-1 rounded-full border border-zinc-700">DE</button>
+        <button onclick="setLang('en')" class="px-3 py-1 rounded-full border border-zinc-700">EN</button>
+      </div>
     </header>
 
     <article class="mt-6">
@@ -19,7 +25,20 @@
       <p class="text-zinc-400 text-sm mt-1">
         {{ page.date | date: "%d.%m.%Y" }}
       </p>
-      <div class="prose prose-invert mt-6 max-w-none">
+
+      <!-- Çok dilli içerik -->
+      <div id="post-tr" class="prose prose-invert mt-6 max-w-none" style="display:none;">
+        {% if page.tr %}{{ page.tr | markdownify }}{% endif %}
+      </div>
+      <div id="post-de" class="prose prose-invert mt-6 max-w-none" style="display:none;">
+        {% if page.de %}{{ page.de | markdownify }}{% endif %}
+      </div>
+      <div id="post-en" class="prose prose-invert mt-6 max-w-none" style="display:none;">
+        {% if page.en %}{{ page.en | markdownify }}{% endif %}
+      </div>
+
+      <!-- Fallback: tek dilli içerik -->
+      <div id="post-default" class="prose prose-invert mt-6 max-w-none" style="display:none;">
         {{ content }}
       </div>
     </article>
@@ -28,5 +47,21 @@
       © {{ "now" | date: "%Y" }} Kagan Bağdemir · <a href="/#impressum">Impressum</a>
     </footer>
   </main>
+
+<script>
+const STRINGS={tr:{'post.back':'Blog'},de:{'post.back':'Blog'},en:{'post.back':'Blog'}};
+function apply(lang){
+  document.documentElement.lang=lang; localStorage.setItem('lang',lang);
+  document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=STRINGS[lang][e.dataset.i18n]||e.textContent);
+  // İçerik görünürlüğü:
+  const blocks={tr:document.getElementById('post-tr'),de:document.getElementById('post-de'),en:document.getElementById('post-en')};
+  const any=Object.values(blocks).some(b=>b && b.innerHTML.trim().length>0);
+  if(any){ Object.values(blocks).forEach(b=>b&&(b.style.display='none')); if(blocks[lang] && blocks[lang].innerHTML.trim()){blocks[lang].style.display='';} else { // fallback sırayla
+      (blocks.tr&&blocks.tr.innerHTML.trim()?blocks.tr:blocks.de&&blocks.de.innerHTML.trim()?blocks.de:blocks.en&&blocks.en.innerHTML.trim()?blocks.en:document.getElementById('post-default')).style.display='';
+    }} else { document.getElementById('post-default').style.display=''; }
+}
+function setLang(l){apply(l);}
+apply(localStorage.getItem('lang')||'tr');
+</script>
 </body>
 </html>
