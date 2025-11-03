@@ -1,9 +1,115 @@
-<!doctype html><meta charset="utf-8">
-<title>Kagan Bağdemir — Portfolio</title>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<body style="font-family:system-ui;margin:32px;line-height:1.6">
-<h1 style="margin:0">Kagan Bağdemir</h1>
-<p>Maschinenbau (ITPL) · Data & Logistics</p>
-<p><a href="mailto:hi@kaganbagdemir.de">hi@kaganbagdemir.de</a></p>
-<p>Building Phas e.</p>
+<title>Kagan Bağdemir — Data & Logistics</title>
+<meta name="description" content="Maschinenbau (ITPL) · Data & Logistics · Werkstudent / Praktikum / Junior">
+<meta property="og:title" content="Kagan Bağdemir — Portfolio">
+<meta property="og:description" content="Projekte · FEM · Logistics IT · CAD">
+<meta name="color-scheme" content="light dark">
+<style>
+:root{--bg:#0b0c0e;--fg:#e8e8ea;--muted:#a6a7ab;--card:#16171b;--acc:#6ee7b7;--r:14px;--max:980px;--bd:#2a2b31}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+a{color:var(--fg);text-decoration:none}
+a.btn{display:inline-block;padding:12px 16px;border:1px solid var(--bd);border-radius:12px;background:linear-gradient(180deg,#1b1c21 0,#13141a 100%);transition:.2s transform}
+a.btn:hover{transform:translateY(-1px)}
+.wrap{max-width:var(--max);margin:auto;padding:28px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.brand{font-weight:700;letter-spacing:.5px}
+.pill{padding:6px 10px;border:1px solid var(--bd);border-radius:999px;cursor:pointer;background:#14151a}
+.hero{padding:28px;border-radius:var(--r);background:
+  radial-gradient(1200px 600px at 10% -20%, rgba(110,231,183,.25), transparent 55%),
+  var(--card)}
+h1{font-size:28px;margin:0 0 6px}
+h2{margin:20px 0 8px;font-size:20px}
+p.m{color:var(--muted);margin:0 0 16px}
+.grid{display:grid;gap:14px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);padding:18px;border-radius:var(--r);border:1px solid var(--bd)}
+footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--bd);color:var(--muted);font-size:14px}
+small.k{font-size:12px;color:var(--muted)}
+.badge{display:inline-block;padding:4px 8px;border:1px solid var(--bd);border-radius:999px;font-size:12px;margin-right:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <strong class="brand">KAGAN BAGDEMIR</strong>
+    <div>
+      <button class="pill" onclick="setLang('de')">DE</button>
+      <button class="pill" onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 data-de="Maschinenbau (ITPL) · Data & Logistics"
+        data-en="Mechanical Eng. (ITPL) · Data & Logistics"></h1>
+    <p class="m" data-de="Werkstudent / Praktikum / Junior · Data/Analytics, Logistik-IT, Manufacturing"
+       data-en="Werkstudent / Internship / Junior · Data/Analytics, Logistics IT, Manufacturing"></p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn" href="mailto:hi@kaganbagdemir.de">hi@kaganbagdemir.de</a>
+      <a class="btn" href="cv.pdf" target="_blank" rel="noopener">CV / Resume (PDF)</a>
+      <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/kahnri" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div style="margin-top:10px">
+      <span class="badge">Python / NumPy</span>
+      <span class="badge">FEM</span>
+      <span class="badge">Logistics IT</span>
+      <span class="badge">CAD / Tech Drawing</span>
+    </div>
+  </section>
+
+  <section style="margin-top:18px" class="grid">
+    <article class="card">
+      <h2>FEM Mini-Solver (Python/NumPy)</h2>
+      <p class="m" data-de="2D elemanlarla demolar; DOF, küresel rijitlik, yer değiştirme & gerilme çıktıları."
+         data-en="2D elements demos; DOFs, global stiffness, displacement & stress outputs."></p>
+      <a class="btn" href="#" target="_blank">Repo / Demo</a>
+    </article>
+
+    <article class="card">
+      <h2>Warehouse KPI Dashboard</h2>
+      <p class="m" data-de="Order lead time, picking accuracy, OEE; Python→pandas→viz; aksiyon alınabilir metrikler."
+         data-en="Lead time, picking accuracy, OEE; Python→pandas→viz; actionable metrics."></p>
+      <a class="btn" href="#" target="_blank">Repo / Demo</a>
+    </article>
+
+    <article class="card">
+      <h2>CAD / Technische Zeichnung</h2>
+      <p class="m" data-en="Automotive parts; dimensioning, tolerances, norms; portfolio."
+         data-de="Otomotiv parçaları; ölçülendirme, toleranslar, normlar; portföy."></p>
+      <a class="btn" href="#" target="_blank">Portföy</a>
+    </article>
+
+    <article class="card">
+      <h2>Blog / Notlar</h2>
+      <p class="m" data-de="IT in Produktion & Logistik’ten kısa yazılar."
+         data-en="Short posts from IT in Production & Logistics."></p>
+      <a class="btn" href="#" target="_blank">Blog</a>
+    </article>
+  </section>
+
+  <footer>
+    <a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutzerklärung</a>
+    <div id="impressum" style="margin-top:10px">
+      <h2>Impressum</h2>
+      <p class="m">Kagan Bağdemir · Hannover · E-Mail: hi@kaganbagdemir.de (adres metnini sonra düzenle)</p>
+    </div>
+    <div id="datenschutz" style="margin-top:10px">
+      <h2>Datenschutzerklärung</h2>
+      <p class="m">Bu sitede çerez kullanılmıyor. Analytics ekleyince metni güncelle ve gerekiyorsa çerez banner’ı ekle.</p>
+    </div>
+    <p style="margin-top:10px">© <span id="y"></span> Kagan Bağdemir · <small class="k">Hosted on GitHub Pages</small></p>
+  </footer>
+</div>
+<script>
+const els=[...document.querySelectorAll('[data-de]')];
+function setLang(lang){els.forEach(el=>el.textContent=el.getAttribute(lang==='en'?'data-en':'data-de'));
+document.documentElement.lang=(lang==='en'?'en':'de');localStorage.setItem('lang',lang)}
+setLang(localStorage.getItem('lang')||'de');
+document.getElementById('y').textContent=new Date().getFullYear();
+</script>
 </body>
+</html>
