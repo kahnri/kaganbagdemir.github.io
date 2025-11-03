@@ -27,10 +27,10 @@
          data-en="Werkstudent / Internship / Junior · Data/Analytics, Logistics IT, Manufacturing"></p>
 
       <div class="flex flex-wrap gap-3 mt-4">
-        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="mailto:hi@kaganbagdemir.de">hi@kaganbagdemir.de</a>
-        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="cv.pdf" target="_blank">CV / Resume (PDF)</a>
-        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="https://github.com/kahnri" target="_blank">GitHub</a>
+        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="mailto:bagdemirkagande@gmail.com">bagdemirkagande@gmail.com</a>
+        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="/dev/">CV / Resume (PDF)</a>
+        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="/dev/" target="_blank">LinkedIn</a>
+        <a class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800" href="/dev/" target="_blank">GitHub</a>
       </div>
 
       <div class="flex flex-wrap gap-2 mt-4 text-sm text-zinc-300">
@@ -47,7 +47,7 @@
         <p class="text-zinc-400 mt-1"
            data-de="2D elemanlarla demolar; DOF, küresel rijitlik, yer değiştirme & gerilme."
            data-en="2D elements demos; DOFs, global stiffness, displacement & stress."></p>
-        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="#" target="_blank">Repo / Demo</a>
+        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="/dev/">Repo / Demo</a>
       </article>
 
       <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60">
@@ -55,7 +55,7 @@
         <p class="text-zinc-400 mt-1"
            data-de="Lead time, picking accuracy, OEE; Python→pandas→viz; aksiyon alınabilir."
            data-en="Lead time, picking accuracy, OEE; Python→pandas→viz; actionable."></p>
-        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="#" target="_blank">Repo / Demo</a>
+        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="/dev/">Repo / Demo</a>
       </article>
 
       <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60">
@@ -63,7 +63,7 @@
         <p class="text-zinc-400 mt-1"
            data-de="Otomotiv parçaları; ölçülendirme, toleranslar, normlar; portföy."
            data-en="Automotive parts; dimensioning, tolerances, norms; portfolio."></p>
-        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="#" target="_blank">Portföy</a>
+        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="/dev/">Portföy</a>
       </article>
 
       <article class="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/60">
@@ -71,7 +71,7 @@
         <p class="text-zinc-400 mt-1"
            data-de="IT in Produktion & Logistik’ten kısa yazılar."
            data-en="Short posts from IT in Production & Logistics."></p>
-        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="#" target="_blank">Blog</a>
+        <a class="inline-block mt-3 px-3 py-1 rounded-lg border border-zinc-700" href="/blog/">Blog</a>
       </article>
     </section>
 
@@ -94,10 +94,8 @@
 
 <script>
 const els=[...document.querySelectorAll('[data-de]')];
-function setLang(lang){
-  els.forEach(el=>el.textContent=el.getAttribute(lang==='en'?'data-en':'data-de'));
-  document.documentElement.lang=(lang==='en'?'en':'de'); localStorage.setItem('lang',lang);
-}
+function setLang(lang){els.forEach(el=>el.textContent=el.getAttribute(lang==='en'?'data-en':'data-de'));
+document.documentElement.lang=(lang==='en'?'en':'de'); localStorage.setItem('lang',lang);}
 setLang(localStorage.getItem('lang')||'de');
 document.getElementById('y').textContent=new Date().getFullYear();
 </script>
