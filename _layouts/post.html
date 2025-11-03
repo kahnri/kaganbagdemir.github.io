@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title }} — Kagan Bağdemir</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="color-scheme" content="light dark">
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+  <main class="max-w-3xl mx-auto px-6 py-10">
+    <header class="flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-wide">KAGAN BAGDEMIR</a>
+      <a href="/blog/" class="px-3 py-1 rounded-full border border-zinc-700">← Blog</a>
+    </header>
+
+    <article class="mt-6">
+      <h1 class="text-3xl font-semibold">{{ page.title }}</h1>
+      <p class="text-zinc-400 text-sm mt-1">
+        {{ page.date | date: "%d.%m.%Y" }}
+      </p>
+      <div class="prose prose-invert mt-6 max-w-none">
+        {{ content }}
+      </div>
+    </article>
+
+    <footer class="mt-10 border-t border-zinc-800 pt-5 text-zinc-400 text-sm">
+      © {{ "now" | date: "%Y" }} Kagan Bağdemir · <a href="/#impressum">Impressum</a>
+    </footer>
+  </main>
+</body>
+</html>
