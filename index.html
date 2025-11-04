@@ -37,183 +37,7 @@
 </script>
 <meta name="description" content="Maschinenbau (ITPL) · Data & Logistics · Werkstudent / Praktikum / Junior">
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-  :root {
-    color-scheme: dark;
-    --bg: #09090b;
-    --text-primary: #f4f4f5;
-    --text-strong: #fafafa;
-    --text-muted: #a1a1aa;
-    --text-soft: #d4d4d8;
-    --border: rgba(82, 82, 91, 0.65);
-    --border-strong: rgba(161, 161, 170, 0.95);
-    --surface: rgba(24, 24, 27, 0.78);
-    --surface-muted: rgba(39, 39, 42, 0.55);
-    --chip-bg: rgba(39, 39, 42, 0.55);
-    --accent-bg: rgba(16, 185, 129, 0.16);
-    --accent-border: rgba(16, 185, 129, 0.5);
-    --accent-text: #34d399;
-  }
-
-  html[data-theme="light"] {
-    color-scheme: light;
-    --bg: #f8fafc;
-    --text-primary: #0f172a;
-    --text-strong: #111827;
-    --text-muted: #475569;
-    --text-soft: #1e293b;
-    --border: rgba(203, 213, 225, 0.9);
-    --border-strong: rgba(148, 163, 184, 1);
-    --surface: rgba(255, 255, 255, 0.88);
-    --surface-muted: rgba(241, 245, 249, 0.9);
-    --chip-bg: rgba(241, 245, 249, 0.95);
-    --accent-bg: rgba(16, 185, 129, 0.12);
-    --accent-border: rgba(16, 185, 129, 0.55);
-    --accent-text: #0f766e;
-  }
-
-  body {
-    background-color: var(--bg);
-    color: var(--text-primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .theme-text-muted {
-    color: var(--text-muted);
-  }
-
-  .theme-text-soft {
-    color: var(--text-soft);
-  }
-
-  .theme-text-strong {
-    color: var(--text-strong);
-  }
-
-  .theme-border {
-    border-color: var(--border);
-  }
-
-  .theme-card,
-  .theme-button,
-  .theme-button-icon,
-  .theme-button-accent,
-  .theme-chip {
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-  }
-
-  .theme-card {
-    background-color: var(--surface);
-    border-color: var(--border);
-  }
-
-  .theme-card:hover {
-    border-color: var(--border-strong);
-  }
-
-  .theme-button {
-    background-color: var(--surface-muted);
-    border-color: var(--border);
-    color: inherit;
-  }
-
-  .theme-button:hover {
-    border-color: var(--border-strong);
-  }
-
-  .theme-button-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--surface-muted);
-    border-color: var(--border);
-    color: inherit;
-  }
-
-  .theme-button-icon:hover {
-    border-color: var(--border-strong);
-  }
-
-  .theme-button-accent {
-    background-color: var(--accent-bg);
-    border-color: var(--accent-border);
-    color: var(--accent-text);
-  }
-
-  .theme-chip {
-    background-color: var(--chip-bg);
-    border-color: var(--border);
-  }
-
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(32px) scale(0.98);
-      filter: blur(6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
-    }
-  }
-
-  @keyframes glowPulse {
-    0% {
-      opacity: 0;
-      transform: translate(-50%, -60%) scale(0.85);
-    }
-    60% {
-      opacity: 0.8;
-      transform: translate(-50%, -60%) scale(1.1);
-    }
-    100% {
-      opacity: 0;
-      transform: translate(-50%, -60%) scale(1.3);
-    }
-  }
-
-  body.initial-anim [data-animate] {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-
-  body.initial-anim-run [data-animate] {
-    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: calc(var(--stagger, 0) * 120ms);
-  }
-
-  body.initial-anim main::before {
-    content: "";
-    position: fixed;
-    top: 30vh;
-    left: 50%;
-    width: min(960px, 80vw);
-    aspect-ratio: 3 / 2;
-    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.18), rgba(16, 185, 129, 0));
-    filter: blur(40px);
-    pointer-events: none;
-    opacity: 0;
-    transform: translate(-50%, -60%);
-    z-index: -1;
-  }
-
-  body.initial-anim-run main::before {
-    animation: glowPulse 1.8s ease-out forwards;
-  }
-</style>
+<link rel="stylesheet" href="/assets/theme.css">
 <meta name="color-scheme" content="light dark">
 <!-- Plausible -->
 <script defer data-domain="kaganbagdemir.de" src="https://plausible.io/js/script.js"></script>
@@ -229,7 +53,7 @@
           <button onclick="setLang('de')" class="px-3 py-1 rounded-full border theme-button">DE</button>
           <button onclick="setLang('en')" class="px-3 py-1 rounded-full border theme-button">EN</button>
           <button id="theme-toggle" class="w-10 h-10 rounded-full border theme-button-icon" type="button">
-            <span id="theme-icon" aria-hidden="true">🌙</span>
+            <span data-theme-icon aria-hidden="true">🌙</span>
             <span class="sr-only" data-i18n="btn.theme"></span>
           </button>
         </div>
@@ -340,55 +164,9 @@ function apply(lang){
 function setLang(l){apply(l);}
 apply(localStorage.getItem('lang')||'tr');
 document.getElementById('y').textContent=new Date().getFullYear();
-
-const themeKey='theme-preference';
-const icon=document.getElementById('theme-icon');
-const htmlEl=document.documentElement;
-let storedTheme=null;
-
-try{storedTheme=localStorage.getItem(themeKey);}catch(e){storedTheme=null;}
-
-function currentTheme(){
-  return htmlEl.dataset.theme||'dark';
-}
-
-function updateIcon(theme){
-  if(icon){
-    icon.textContent=theme==='dark'?'🌙':'☀️';
-  }
-}
-
-function setTheme(theme,persist=true){
-  htmlEl.dataset.theme=theme;
-  if(persist){
-    try{localStorage.setItem(themeKey,theme);}catch(e){}
-    storedTheme=theme;
-  }
-  updateIcon(theme);
-}
-
-if(storedTheme){
-  setTheme(storedTheme);
-}else{
-  updateIcon(currentTheme());
-}
-
-const themeToggle=document.getElementById('theme-toggle');
-if(themeToggle){
-  themeToggle.addEventListener('click',()=>{
-    const next=currentTheme()==='dark'?'light':'dark';
-    setTheme(next);
-  });
-}
-
-try{
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',event=>{
-    if(!storedTheme){
-      setTheme(event.matches?'dark':'light',false);
-    }
-  });
-}catch(e){}
-
+</script>
+<script src="/assets/theme.js"></script>
+<script>
 const firstVisitKey='landingAnimationPlayed';
 let shouldAnimate=false;
 try{
