@@ -13,6 +13,9 @@
   --accent-bg: rgba(16, 185, 129, 0.16);
   --accent-border: rgba(16, 185, 129, 0.5);
   --accent-text: #34d399;
+  --background-glow-1: rgba(59, 130, 246, 0.18);
+  --background-glow-2: rgba(16, 185, 129, 0.12);
+  --background-glow-3: rgba(244, 114, 182, 0.12);
 }
 
 html[data-theme="light"] {
@@ -30,12 +33,45 @@ html[data-theme="light"] {
   --accent-bg: rgba(16, 185, 129, 0.12);
   --accent-border: rgba(16, 185, 129, 0.55);
   --accent-text: #0f766e;
+  --background-glow-1: rgba(59, 130, 246, 0.22);
+  --background-glow-2: rgba(16, 185, 129, 0.18);
+  --background-glow-3: rgba(244, 114, 182, 0.16);
 }
 
 body {
   background-color: var(--bg);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(60% 55% at 15% 15%, var(--background-glow-1), transparent 65%),
+    radial-gradient(55% 50% at 85% 20%, var(--background-glow-2), transparent 70%),
+    radial-gradient(80% 75% at 50% 85%, var(--background-glow-3), transparent 70%);
+  filter: blur(0px);
+  opacity: 0.95;
+  transform: translateZ(0);
+  animation: themeAurora 18s ease-in-out infinite;
+}
+
+@keyframes themeAurora {
+  0% {
+    transform: scale(1.05) translate3d(-1%, -1%, 0);
+  }
+  50% {
+    transform: scale(1.08) translate3d(1%, 1.5%, 0);
+  }
+  100% {
+    transform: scale(1.05) translate3d(-1%, -1%, 0);
+  }
 }
 
 a {
