@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!doctype html>
 <html lang="tr">
 <head>
@@ -80,6 +83,32 @@
       </div>
     </section>
 
+    <section class="mt-6 rounded-2xl p-6 border theme-card" data-animate style="--stagger:1.5">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <h2 class="text-2xl font-semibold" data-i18n="recent.title"></h2>
+        <a class="px-3 py-1 rounded-full border theme-button transition" href="/blog/" data-i18n="recent.all"></a>
+      </div>
+
+      {% if site.posts.size > 0 %}
+      <div class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {% for post in site.posts limit:3 %}
+        <article class="p-5 rounded-2xl border theme-card transition hover:-translate-y-0.5">
+          <h3 class="text-lg font-semibold">
+            <a class="hover:underline" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="theme-text-muted text-sm">{{ post.date | date: "%d.%m.%Y" }}</p>
+          {% if post.excerpt %}
+          <p class="theme-text-soft mt-2">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+          {% endif %}
+          <a class="inline-block mt-3 px-3 py-1 rounded-lg border theme-button transition" href="{{ post.url | relative_url }}" data-i18n="recent.read"></a>
+        </article>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="mt-4 theme-text-muted" data-i18n="recent.empty"></p>
+      {% endif %}
+    </section>
+
     <!-- Kartlar (hepsi şimdilik /dev'e gider) -->
     <section class="grid md:grid-cols-2 gap-4 mt-6" data-animate style="--stagger:2">
       <article class="p-5 rounded-2xl border theme-card transition hover:-translate-y-0.5" data-animate style="--stagger:2.4">
@@ -129,6 +158,7 @@ const STRINGS={
  tr:{'nav.blog':'Blog','hero.title':'Makine Mühendisliği (ITPL) · Veri & Lojistik',
      'hero.subtitle':'Werkstudent / Staj / Junior · Veri/Analitik, Lojistik-IT, Üretim',
      'btn.email':'E-posta','btn.cv':'CV / Özgeçmiş (PDF)','btn.linkedin':'LinkedIn','btn.github':'GitHub','btn.blog':'Blog','btn.theme':'Tema değiştir',
+     'recent.title':'Son yazılar','recent.all':'Tüm yazılar','recent.read':'Oku','recent.empty':'Henüz yazı yok. _posts/ klasörüne bir Markdown dosyası ekle.',
      'cards.fem':'2D elemanlarla demolar; DOF, küresel rijitlik, yer değiştirme & gerilme.',
      'cards.kpi':'Lead time, picking accuracy, OEE; Python→pandas→viz; aksiyon alınabilir metrikler.',
      'cards.cad':'Otomotiv parçaları; ölçülendirme, toleranslar, normlar; portföy.',
@@ -137,6 +167,7 @@ const STRINGS={
  de:{'nav.blog':'Blog','hero.title':'Maschinenbau (ITPL) · Data & Logistics',
      'hero.subtitle':'Werkstudent / Praktikum / Junior · Data/Analytics, Logistik-IT, Manufacturing',
      'btn.email':'E-Mail','btn.cv':'CV / Lebenslauf (PDF)','btn.linkedin':'LinkedIn','btn.github':'GitHub','btn.blog':'Blog','btn.theme':'Thema wechseln',
+     'recent.title':'Neueste Beiträge','recent.all':'Alle Beiträge','recent.read':'Lesen','recent.empty':'Noch keine Beiträge. Lege eine Markdown-Datei in _posts/ ab.',
      'cards.fem':'Demos mit 2D-Elementen; DOF, globale Steifigkeit, Verschiebung & Spannung.',
      'cards.kpi':'Lead Time, Picking Accuracy, OEE; Python→pandas→Viz; umsetzbare Metriken.',
      'cards.cad':'Automotive-Teile; Bemaßung, Toleranzen, Normen; Portfolio.',
@@ -145,6 +176,7 @@ const STRINGS={
  en:{'nav.blog':'Blog','hero.title':'Mechanical Eng. (ITPL) · Data & Logistics',
      'hero.subtitle':'Werkstudent / Internship / Junior · Data/Analytics, Logistics IT, Manufacturing',
      'btn.email':'E-mail','btn.cv':'CV / Resume (PDF)','btn.linkedin':'LinkedIn','btn.github':'GitHub','btn.blog':'Blog','btn.theme':'Toggle theme',
+     'recent.title':'Latest posts','recent.all':'All posts','recent.read':'Read','recent.empty':'No posts yet. Add a Markdown file under _posts/.',
      'cards.fem':'Demos with 2D elements; DOFs, global stiffness, displacement & stress.',
      'cards.kpi':'Lead time, picking accuracy, OEE; Python→pandas→viz; actionable metrics.',
      'cards.cad':'Automotive parts; dimensioning, tolerances, norms; portfolio.',
